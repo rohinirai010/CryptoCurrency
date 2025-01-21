@@ -13,7 +13,7 @@ const Welcome = () => {
     localStorage.setItem("hasInviter", hasInviter);
 
     // Navigate to the /trading page
-    navigate("/trading");
+    navigate("/");
   };
 
   return (

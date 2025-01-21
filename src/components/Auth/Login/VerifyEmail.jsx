@@ -96,7 +96,7 @@ const VerifyEmail = () => {
       if (fromForgotPassword) {
         navigate("/reset-password"); // Navigate to reset-password if the user is coming from forgot password flow
       } else {
-        navigate("/trading"); // Navigate to your desired page
+        navigate("/"); // Navigate to your desired page
       }
     } else {
       setError("Incorrect code. Please try again.");

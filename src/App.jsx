@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/trading" element={<Trading />} />
+        <Route path="/" element={<Trading />} />
         <Route path="/login" element={<Login />} />
         <Route path="/enter-password" element={<EnterPassword />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
