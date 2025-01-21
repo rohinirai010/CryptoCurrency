@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Input from "../../Common/Input";
 import Button from "../../Common/Button";
 import { Check, Eye, EyeOff } from "lucide-react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const ResetPassword = () => {
   const [password, setPassword] = useState("");
@@ -13,6 +14,7 @@ const ResetPassword = () => {
   });
   const [showNewPassword, setShowNewPassword] = useState(true); //  New Password visibility
   const [showConfirmPassword, setShowConfirmPassword] = useState(true); //  Confirm Password visibility
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   const validatePassword = (value) => {
     setValidations({
@@ -34,6 +36,18 @@ const ResetPassword = () => {
 
   const isPasswordValid = Object.values(validations).every(Boolean);
   const passwordsMatch = password === confirmPassword;
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    if (isPasswordValid && passwordsMatch) {
+      // Store the password in localStorage or update the backend
+      localStorage.setItem("password", password);
+
+      // Navigate to the homepage after successful reset
+      navigate("/"); // Or use navigate("/login") if you want to redirect to a login page
+    }
+  };
 
   return (
     <div className="flex flex-col gap-[1rem] items-center justify-center px-4 sm:px-0 py-[2rem] bg-white">
@@ -115,6 +129,7 @@ const ResetPassword = () => {
             variant="primary"
             className="w-full text-center"
             type="submit"
+            onClick={handleSubmit} // Handle the submit logic
             disabled={!isPasswordValid || !passwordsMatch}
             style={{
               opacity: isPasswordValid && passwordsMatch ? 1 : 0.5,
