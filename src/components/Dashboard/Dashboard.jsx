@@ -655,7 +655,7 @@ const TradingDashboard = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 w-full mt-1 md:mt-0">
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 w-full mt-1 md:mt-0 mb-4">
           {components.orderForm && <OrderForm />}
         </div>
       </div>
