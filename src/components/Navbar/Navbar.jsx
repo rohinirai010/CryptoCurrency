@@ -288,7 +288,7 @@
 
     const NavItem = ({ text, className = "" }) => (
       <button
-        className={`px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-800 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${className}`}
+        className={`px-2 xl:px-4 py-1 xl:py-2 text-sm font-medium text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-800 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${className}`}
       >
         {text}
       </button>
@@ -303,7 +303,7 @@
     return (
       <>
         {/* Desktop Navbar */}
-        <nav className="hidden md:flex items-center h-16 px-6 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 transition-all ease-in-out duration-300">
+        <nav className="hidden lg:flex items-center h-16 px-6 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 transition-all ease-in-out duration-300">
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img
@@ -313,7 +313,7 @@
               />
             </a>
 
-            <div className="flex ml-10 space-x-3">
+            <div className="flex ml-0 xl:ml-10 space-x-3">
               <NavItem text="Futures" />
               <NavItem text="Options" />
               <NavItem text="Trading Bots" />
@@ -363,7 +363,7 @@
         </nav>
 
        {/* Mobile Navbar */}
-<nav className="md:hidden bg-gradient-to-r from-yellow-400 to-yellow-500 dark:from-gray-800 dark:to-gray-900 border-b border-gray-200 dark:border-gray-700 transition-all ease-in-out duration-300">
+<nav className="lg:hidden bg-gradient-to-r from-yellow-400 to-yellow-500 dark:from-gray-800 dark:to-gray-900 border-b border-gray-200 dark:border-gray-700 transition-all ease-in-out duration-300">
   <div className="flex items-center justify-between h-16 px-4">
     <div className="flex items-center">
       <button
@@ -381,7 +381,12 @@
       </a>
     </div>
     <div className="flex items-center space-x-3">
-     
+    <a
+                href="/register"
+                className="hidden sm:flex lg:hidden px-4 py-2 text-lg font-semibold text-center bg-gray-900 text-white dark:bg-yellow-600 dark:text-white rounded-md transition-all duration-300 transform hover:scale-105"
+              >
+                Register
+              </a>
       <button
         className="p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-all duration-300 transform hover:scale-105"
         onClick={() => setIsDarkMode(!isDarkMode)}
